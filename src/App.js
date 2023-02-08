@@ -1,34 +1,14 @@
+import {useState} from 'react';
 import './App.css';
 
-const Person = ({name, lastName, age}) => 
-  <>
-  <h1>Name: {name}</h1>
-  <h1>Last Name: {lastName}</h1>
-  <h1>Age: {age}</h1>
-  </>
-
-
 const App =()=> {
-  const name = null; 
+  const [counter, setCounter] = useState(0);
   return (
     <div className="App">
-      <h1>Hello, {2 * 2}!</h1>
-      {
-        name ? (
-          <>
-          test
-          </>
-        ):(
-          <>
-          <h1>test</h1>
-          <h1>There is no name</h1>
-          <Person name={'John'} lastName={'Doe'} age={34}/>
-          <Person name={'Jane'} lastName={'Doe'} age={24}/>
-          <Person name={'Santa'} lastName={'Claus'} age={533}/>
-          <Person name={'Willem'} lastName={'Mayhem'} age={11}/>
-          </>
-        )
-      }
+      <button onClick={() => setCounter(prevCount => prevCount - 1)}>-</button>
+      <h1>{counter}</h1>
+      <h1>yes</h1>
+      <button onClick={() => setCounter(prevCount => prevCount + 1)}>+</button>
     </div>
   );
 }
